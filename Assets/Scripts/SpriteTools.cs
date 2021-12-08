@@ -6,6 +6,40 @@ public class SpriteTools : MonoBehaviour
 {
     public Camera Camera;
 
+    
+
+    // returns an angle in degrees between a world point and the mouse cursor
+    // 0 degrees is to the right of the world point, 90 degrees is straight up
+    // from the world point
+
+    public float GetAngleBetweenWorldPointAndMouse(Vector3 point1)
+    {
+        Vector2 point1Screen = Camera.main.WorldToScreenPoint(new Vector3(
+            point1.x, point1.y, 0f));
+        return DegreesBetweenPoints(point1Screen, Input.mousePosition);
+    }
+
+    public float GetAngleBetweenWorldPoints(Vector3 point1, Vector3 point2)
+    {
+        Vector2 point1Screen = Camera.main.WorldToScreenPoint(new Vector3(
+            point1.x, point1.y, 0f));
+        Vector2 point2Screen = Camera.main.WorldToScreenPoint(new Vector3(
+            point2.x, point2.y, 0f));
+        return DegreesBetweenPoints(point1Screen, point2Screen);
+    }
+
+    private float DegreesBetweenPoints(Vector2 point1, Vector2 point2)
+    {
+        float angle = Mathf.Atan2(point2.y - point1.y,
+            point2.x - point1.x);
+        angle = angle * Mathf.Rad2Deg;
+
+        if (angle < 0)
+            angle = 360 - (-1 * angle);
+
+        return angle;
+    }
+
     public Vector3 ConstrainToScreen(SpriteRenderer spriteRenderer)
     {
         Vector3 screenPosition = Camera.WorldToScreenPoint(spriteRenderer.transform.position);

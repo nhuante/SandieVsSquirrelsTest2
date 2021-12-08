@@ -77,7 +77,7 @@ public class MegaSquirrel : MonoBehaviour
             MegaSquirrelSpriteRenderer.flipX = true;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Beer")
         {

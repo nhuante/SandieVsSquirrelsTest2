@@ -31,7 +31,7 @@ public class CrackSquirrel : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Beer")
         {
@@ -114,7 +114,7 @@ public class CrackSquirrel : MonoBehaviour
 
     private bool WithinRange()
     {
-        return (Vector3.Distance(transform.position, corgiTransform.position) > GameParameters.minimumDistancefromCorgi);
+        return (Vector3.Distance(transform.position, corgiTransform.position) > GameParameters.MinimumDistancefromCorgi);
     }
 
     private void FaceCorrectDirection(Vector2 direction)

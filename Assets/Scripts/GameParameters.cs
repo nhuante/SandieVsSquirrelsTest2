@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameParameters : MonoBehaviour
 {
     // corgi
-    public static float minimumDistancefromCorgi = 1.5f;
+    public static float MinimumDistancefromCorgi = 1.5f;
     public static int CorgiLives = 5;
 
     // mega squirrel
@@ -17,6 +17,9 @@ public class GameParameters : MonoBehaviour
     public static int CrackSquirrelLives = 2;
 
     // normal squirrel
-    public static float rangeToShootFor = 9f;
+    public static float RangeToShootFor = 5f;
     public static int NormalSquirrelLives = 1;
+
+    // acorn
+    public static float AcornSpeed = 0.05f;
 }

@@ -63,7 +63,7 @@ public class Corgi : MonoBehaviour
             CorgiSpriteRenderer.flipX = true;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Acorn")
         {
