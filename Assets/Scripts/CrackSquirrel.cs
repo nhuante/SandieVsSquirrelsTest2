@@ -127,7 +127,7 @@ public class CrackSquirrel : MonoBehaviour
 
     private void LoseLife()
     {
-        lives = lives - 50;
+        lives = lives - 1;
         if (lives == 0)
             BeDrunk();
     }
